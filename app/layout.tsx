@@ -12,20 +12,20 @@ export const metadata: Metadata = {
   title: "Nagar Palika Mount Abu - Official Website",
   description:
     "Welcome to the official website of Nagar Palika Mount Abu. Discover Rajasthan's only hill station - blessed with cool climate, lush greenery, serene lakes, and ancient temples.",
-  generator: "v0.app",
+  generator: "abhijeet",
   keywords: ["Mount Abu", "Rajasthan", "Hill Station", "Tourism", "Nagar Palika", "Nakki Lake", "Dilwara Temples"],
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "",
         type: "image/svg+xml",
       },
     ],

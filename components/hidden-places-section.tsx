@@ -106,9 +106,9 @@ export default function HiddenPlacesSection() {
           }`}
         >
           {/* Left - Text Content */}
-          <div>
-            <h3 className="text-yellow-400 text-2xl md:text-3xl font-bold uppercase tracking-wide">{currentPlace.name}</h3>
-            <p className="text-white/90 mt-4 leading-relaxed max-w-lg">{currentPlace.description}</p>
+          <div className="transition-all duration-1000 ease-in-out">
+            <h3 className="text-yellow-400 text-2xl md:text-3xl font-bold uppercase tracking-wide transition-opacity duration-1000">{currentPlace.name}</h3>
+            <p className="text-white/90 mt-4 leading-relaxed max-w-lg transition-opacity duration-1000">{currentPlace.description}</p>
 
             <div className="flex items-center gap-4 mt-8">
               <button className="bg-yellow-400/20 border border-yellow-400 text-yellow-400 hover:bg-yellow-400/30 px-6 py-2 rounded transition-colors duration-300">
@@ -148,7 +148,7 @@ export default function HiddenPlacesSection() {
             </div>
 
             {/* Side Images */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 transition-all duration-1000 ease-in-out">
               <div className="w-40 h-36 rounded-xl overflow-hidden shadow-lg border border-yellow-400/30 transform transition-all duration-700 delay-100 hover:scale-105 hover:border-yellow-400/70 animate-slide-up">
                 <img
                   src={currentPlace.images[1] || "/placeholder.svg"}

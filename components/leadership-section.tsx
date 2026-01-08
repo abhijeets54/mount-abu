@@ -83,12 +83,13 @@ export default function LeadershipSection() {
           }`}
         >
           {/* Leader Image */}
-          <div className="relative">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-yellow-400 relative z-10">
+          <div className="relative transition-all duration-1000 ease-in-out">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-yellow-400 relative z-10 transition-opacity duration-1000">
               <img
+                key={currentLeader.id}
                 src={currentLeader.image || "/placeholder.svg"}
                 alt={currentLeader.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
               />
             </div>
             {/* Decorative ring */}
@@ -96,10 +97,10 @@ export default function LeadershipSection() {
           </div>
 
           {/* Leader Info */}
-          <div className="flex-1 max-w-2xl">
-            <h3 className="text-yellow-400 text-2xl md:text-3xl font-bold uppercase tracking-wide">{currentLeader.name}</h3>
-            <p className="text-white text-lg font-medium mt-2">{currentLeader.position}</p>
-            <p className="text-white/90 mt-6 leading-relaxed text-base md:text-lg">{currentLeader.message}</p>
+          <div className="flex-1 max-w-2xl transition-all duration-1000 ease-in-out">
+            <h3 className="text-yellow-400 text-2xl md:text-3xl font-bold uppercase tracking-wide transition-opacity duration-1000">{currentLeader.name}</h3>
+            <p className="text-white text-lg font-medium mt-2 transition-opacity duration-1000">{currentLeader.position}</p>
+            <p className="text-white/90 mt-6 leading-relaxed text-base md:text-lg transition-opacity duration-1000">{currentLeader.message}</p>
           </div>
         </div>
 

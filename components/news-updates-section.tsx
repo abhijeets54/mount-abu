@@ -100,11 +100,11 @@ export default function NewsUpdatesSection() {
         >
           <div className="bg-cream rounded-3xl overflow-hidden flex flex-col lg:flex-row max-w-5xl mx-auto">
             {/* Text Content */}
-            <div className="p-8 lg:p-12 flex flex-col justify-between lg:w-1/2">
+            <div className="p-8 lg:p-12 flex flex-col justify-between lg:w-1/2 transition-opacity duration-1000 ease-in-out">
               <div>
-                <p className="text-header/60 text-sm">{currentItem.label}</p>
-                <h3 className="text-teal text-2xl md:text-3xl font-bold mt-2 leading-tight">{currentItem.title}</h3>
-                <p className="text-header/70 mt-4">{currentItem.period}</p>
+                <p className="text-header/60 text-sm transition-opacity duration-1000">{currentItem.label}</p>
+                <h3 className="text-teal text-2xl md:text-3xl font-bold mt-2 leading-tight transition-opacity duration-1000">{currentItem.title}</h3>
+                <p className="text-header/70 mt-4 transition-opacity duration-1000">{currentItem.period}</p>
               </div>
 
               <div className="mt-8 flex items-center gap-4">
@@ -156,7 +156,7 @@ export default function NewsUpdatesSection() {
               }`}
               aria-label={`Go to slide ${index + 1}`}
             >
-              {index === currentIndex && <ChevronRight className="w-4 h-4 text-yellow-400" />}
+              {index === currentIndex }
             </button>
           ))}
         </div>

@@ -11,7 +11,11 @@ const treks = [
     description:
       "This is a calm and refreshing trek through forested paths of the Aravalli hills. The route is shaded and rich in natural vegetation, making it pleasant even during warmer months. Shanti Shikhar offers quiet surroundings and scenic views, ideal for relaxation and nature appreciation. The trek is easy to moderate and suitable for beginners.",
     guide: "Rabisankar Mishra",
-    images: ["/shanti-shikhar-mount-abu-rocky-terrain-forest.jpg", "/camping-tent-blue-mountains.jpg", "/placeholder.svg?height=200&width=200"],
+    images: [
+      "https://images.pexels.com/photos/1470169/pexels-photo-1470169.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
+    ],
   },
   {
     id: 2,
@@ -21,22 +25,18 @@ const treks = [
       "Explore the mystical Aadesh Cave, a hidden gem tucked away in the Aravalli hills. This moderate trek takes you through dense forest cover, offering glimpses of local wildlife and rare flora. The cave itself holds spiritual significance and provides a serene spot for meditation.",
     guide: "Local Forest Guide",
     images: [
-      "/placeholder.svg?height=400&width=500",
-      "/placeholder.svg?height=200&width=200",
-      "/placeholder.svg?height=200&width=200",
+      "https://images.pexels.com/photos/1470169/pexels-photo-1470169.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.pexels.com/photos/1209843/pexels-photo-1209843.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
     ],
-  },
-  {
-    id: 3,
-    name: "Craigs Point",
     from: "Nakki Lake",
     description:
       "A scenic trek leading to one of Mount Abu's most spectacular viewpoints. Craigs Point offers panoramic views of the surrounding valleys and is especially beautiful during sunset. The trail passes through pine forests and rocky terrain.",
     guide: "Adventure Mount Abu",
     images: [
-      "/placeholder.svg?height=400&width=500",
-      "/placeholder.svg?height=200&width=200",
-      "/placeholder.svg?height=200&width=200",
+      "https://images.pexels.com/photos/1506681/pexels-photo-1506681.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
     ],
   },
   {
@@ -47,9 +47,9 @@ const treks = [
       "A unique geological formation that has become a popular trekking destination. The flat-topped rock formation offers stunning views and a perfect spot for photography. The trek is moderately challenging with some steep sections.",
     guide: "Mount Abu Trekkers",
     images: [
-      "/placeholder.svg?height=400&width=500",
-      "/placeholder.svg?height=200&width=200",
-      "/placeholder.svg?height=200&width=200",
+      "https://images.pexels.com/photos/1933900/pexels-photo-1933900.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      "https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
     ],
   },
 ]
@@ -117,13 +117,13 @@ export default function AdventuresSection() {
           }`}
         >
           {/* Left - Trek Info */}
-          <div>
-            <p className="text-white/70 text-base">{currentTrek.from} To</p>
-            <h3 className="text-yellow-400 text-3xl md:text-4xl font-bold uppercase tracking-wide mt-1">
+          <div className="transition-all duration-1000 ease-in-out">
+            <p className="text-white/70 text-base transition-opacity duration-1000">{currentTrek.from} To</p>
+            <h3 className="text-yellow-400 text-3xl md:text-4xl font-bold uppercase tracking-wide mt-1 transition-opacity duration-1000">
               {currentTrek.name}
             </h3>
-            <p className="text-white/90 mt-6 leading-relaxed text-base md:text-lg">{currentTrek.description}</p>
-            <p className="text-yellow-400 mt-4">
+            <p className="text-white/90 mt-6 leading-relaxed text-base md:text-lg transition-opacity duration-1000">{currentTrek.description}</p>
+            <p className="text-yellow-400 mt-4 transition-opacity duration-1000">
               Official Guides- <span className="underline">{currentTrek.guide}</span>
             </p>
 
@@ -168,28 +168,31 @@ export default function AdventuresSection() {
           </div>
 
           {/* Right - Images */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 transition-all duration-1000 ease-in-out">
             {/* Main Large Image */}
             <div className="col-span-2 md:col-span-1 row-span-2 rounded-xl overflow-hidden">
               <img
+                key={currentTrek.id}
                 src={currentTrek.images[0] || "/placeholder.svg"}
                 alt={currentTrek.name}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover hover:scale-105 transition-all duration-1000 ease-in-out"
               />
             </div>
             {/* Small Images */}
-            <div className="rounded-xl overflow-hidden">
+            <div className="rounded-xl overflow-hidden transition-all duration-1000 ease-in-out">
               <img
+                key={`${currentTrek.id}-2`}
                 src={currentTrek.images[1] || "/placeholder.svg"}
                 alt={`${currentTrek.name} view 2`}
-                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-40 object-cover hover:scale-105 transition-all duration-1000 ease-in-out"
               />
             </div>
-            <div className="rounded-xl overflow-hidden">
+            <div className="rounded-xl overflow-hidden transition-all duration-1000 ease-in-out">
               <img
+                key={`${currentTrek.id}-3`}
                 src={currentTrek.images[2] || "/placeholder.svg"}
                 alt={`${currentTrek.name} view 3`}
-                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-40 object-cover hover:scale-105 transition-all duration-1000 ease-in-out"
               />
             </div>
           </div>
